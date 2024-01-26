@@ -1,0 +1,19 @@
+<!-- choices.component.html -->
+
+<div class="flex flex-col items-center justify-center h-screen">
+  <p class="text-2xl font-bold mb-4">Login As</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+    <!-- Buyer Box -->
+    <button class="choice-box bg-gradient-to-r from-blue-500 to-purple-500 transform transition-transform duration-300 hover:scale-110"
+            (click)="navigateToLogin('buyer')">
+      <p class="text-white text-xl font-semibold">Buyer</p>
+    </button>
+
+    <!-- Seller Box -->
+    <button class="choice-box bg-gradient-to-r from-green-500 to-yellow-500 transform transition-transform duration-300 hover:scale-110"
+            (click)="navigateToLogin('seller')">
+      <p class="text-white text-xl font-semibold">Seller</p>
+    </button>
+  </div>
+</div>

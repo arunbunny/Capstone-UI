@@ -1,0 +1,19 @@
+<!-- src/app/welcome/welcome.component.html -->
+
+<div class="welcome-container relative flex flex-col items-center justify-center h-screen bg-cover bg-center" style="background-image: url('/assets/welcome.png');">
+  <div class="absolute inset-0 bg-gray-800 opacity-50"></div>
+  <div class="text-white text-center z-10">
+    <h1 class="text-4xl font-bold mb-4">Welcome to Bhoomi Samarpan</h1>
+
+    <!-- Flex container for side-by-side elements -->
+    <div class="flex justify-center items-center">
+      <!-- Animated "Get Started" button -->
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-110" (click)="navigate()">Get Started</button>
+      
+      <!-- Right arrow -->
+      <div class="text-4xl ml-4 animate-bounce">&#8594;</div>
+    </div>
+
+    <!-- <p class="mt-4">Navigate to <a routerLink="/welcome">Welcome</a> route.</p> -->
+  </div>
+</div>
