@@ -19,7 +19,10 @@ import { SuccessAlertDialog } from './forms/success-alert/success-alert.dialog';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterLandAssetDialog } from './forms/register-land-asset/register-land-asset.dialog';
-import { Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+import {GetBuyerReqsComponent} from './components/get-buyer-reqs/get-buyer-reqs.component';
+
 
 
 @NgModule({
@@ -36,16 +39,18 @@ import { Routes } from '@angular/router';
     BuyerDashboardComponent,
     SuccessAlertDialog,
     RegisterLandAssetDialog,
-    
+    GetBuyerReqsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CommonModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatDialogModule,
     RouterModule,
+   
   ],
   exports:[
     

@@ -7,7 +7,7 @@ import { PlatformService } from 'src/app/platform.service';
   styleUrls: ['./get-buyer-reqs.component.scss']
 })
 export class GetBuyerReqsComponent implements OnInit{
-
+  buyerRequests: any[] = [];
   constructor(private platService:PlatformService){}
   ngOnInit(): void {
     this.fetchBuyerRequests();
@@ -17,6 +17,7 @@ export class GetBuyerReqsComponent implements OnInit{
     this.platService.getBuyerRequests().subscribe(
       (data:any) => {
         console.log(data);
+        this.buyerRequests = data;
       },
       (error) => {
         console.error('Error fetching buyer requests:', error);
