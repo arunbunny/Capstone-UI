@@ -8,12 +8,18 @@ import { ChoicesComponent } from './components/choices/choices.component';
 import { PlatformLoginDialog } from './forms/platform-login/platform-login.dialog';
 import { PlatformComponent } from './pages/platform/platform.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
 import { PlatformUserRegisisterDialog } from './forms/platform-user-regisister/platform-user-regisister.dialog';
 import { SellerDashboardComponent } from './pages/seller-dashboard/seller-dashboard.component';
+import { TransferFormComponent } from './forms/transfer-form/transfer-form.component';
+import { BuyerDashboardComponent } from './pages/buyer-dashboard/buyer-dashboard.component';
+import { SuccessAlertDialog } from './forms/success-alert/success-alert.dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterLandAssetDialog } from './forms/register-land-asset/register-land-asset.dialog';
+import { Routes } from '@angular/router';
 
 
 @NgModule({
@@ -26,14 +32,20 @@ import { SellerDashboardComponent } from './pages/seller-dashboard/seller-dashbo
     PlatformComponent,
     PlatformUserRegisisterDialog,
     SellerDashboardComponent,
+    TransferFormComponent,
+    BuyerDashboardComponent,
+    SuccessAlertDialog,
+    RegisterLandAssetDialog,
+    
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    MatInputModule,
-    MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    RouterModule,
   ],
   exports:[
     

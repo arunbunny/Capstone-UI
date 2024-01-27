@@ -6,6 +6,9 @@ import { ChoicesComponent } from './components/choices/choices.component';
 import { PlatformLoginDialog } from './forms/platform-login/platform-login.dialog';
 import { PlatformUserRegisisterDialog } from './forms/platform-user-regisister/platform-user-regisister.dialog';
 import { SellerDashboardComponent } from './pages/seller-dashboard/seller-dashboard.component';
+import { BuyerDashboardComponent } from './pages/buyer-dashboard/buyer-dashboard.component';
+import { RegisterLandAssetDialog } from './forms/register-land-asset/register-land-asset.dialog';
+import { GetBuyerReqsComponent } from './components/get-buyer-reqs/get-buyer-reqs.component';
 
 const routes: Routes = [
   {  
@@ -36,9 +39,21 @@ const routes: Routes = [
   },
   {
     path:'seller-dashboard',
-    component:SellerDashboardComponent
+    component:SellerDashboardComponent,
+    canActivate: []
   },
-
+  {
+    path:'buyer-dashboard',
+    component:BuyerDashboardComponent
+  },
+  {
+    path:'register-land-asset',
+    component:RegisterLandAssetDialog
+  },
+  {
+    path:'get-buyer-requests',
+    component:GetBuyerReqsComponent
+  }
   // Add other routes as needed
 ];
 

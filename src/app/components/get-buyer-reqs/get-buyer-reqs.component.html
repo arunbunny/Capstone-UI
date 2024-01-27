@@ -1,0 +1,26 @@
+<!-- get-buyer-requests.component.html -->
+
+<div class="container mx-auto mt-8">
+    <h2 class="text-2xl font-bold mb-4">Buyer Requests</h2>
+  
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Buyer Request Card -->
+      <div *ngFor="let request of buyerRequests" class="bg-white rounded overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105 border-solid border-2 border-yellow-400">
+        <!-- Card Content -->
+        <div class="p-4">
+          <h3 class="font-bold text-xl mb-2">{{ request.buyerName }}</h3>
+          <p class="text-gray-700">{{ request.details }}</p>
+          <!-- Additional details as needed -->
+  
+          <!-- Approve and Reject Buttons -->
+          <div class="flex justify-between mt-4">
+            <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">Approve</button>
+            <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Reject</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Repeat the card structure for each buyer request -->
+    </div>
+  </div>
+  

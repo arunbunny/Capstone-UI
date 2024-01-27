@@ -1,0 +1,60 @@
+.success-card {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 999;
+  }
+
+  .success-content {
+    display: flex;
+    align-items: center;
+  }
+
+  .success-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .success-message {
+    margin: 0;
+  }
+
+  .close-button {
+    background-color: #ffffff;
+    color: #4CAF50;
+    border: none;
+    padding: 5px 10px;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+
+  /* Add this CSS to your component's style file or the global styles */
+
+/* Increase height and width of mat-dialog-content */
+.mat-dialog-content {
+    min-width: 300px; /* Adjust the width as needed */
+    min-height: 100px; /* Adjust the height as needed */
+  }
+  
+  /* Customize the appearance of the success icon */
+  .mat-dialog-content i.fa-check-circle {
+    font-size: 3rem; /* Adjust the font size as needed */
+    color: green;
+    
+  }
+  
+  /* Style the heading for a rich look */
+  .mat-dialog-content h5 {
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    color: #333; /* Adjust the text color as needed */
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  

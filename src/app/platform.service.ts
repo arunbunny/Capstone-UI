@@ -20,5 +20,13 @@ export class PlatformService {
     return this.http.post(`${this.apiUrl}/register-user`, body);
   }
 
+  registerLand(body:any):Observable<any>{
+    return this.http.post(`${this.apiUrl}/register-land`, body)
+  }
+
+  getBuyerRequests(){
+    return this.http.get(`${this.apiUrl}/get-my-request`)
+  }
+
 
 }

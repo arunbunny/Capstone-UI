@@ -19,6 +19,12 @@ $my-app-theme: mat.define-light-theme((color: (primary: $my-app-primary,
 @include mat.all-component-themes($my-app-theme);
 
 
+// regular style toast
+@import 'ngx-toastr/toastr';
+
+// bootstrap style toast
+// or import a bootstrap 4 alert styled design (SASS ONLY)
+
 
 
 @tailwind base;
@@ -29,6 +35,9 @@ $my-app-theme: mat.define-light-theme((color: (primary: $my-app-primary,
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+
 
 
 .choice-box {
@@ -70,3 +79,26 @@ $my-app-theme: mat.define-light-theme((color: (primary: $my-app-primary,
  background-image: url(https://i.imgur.com/QA7jOIs.jpg);
  background-repeat: no-repeat;
  }
+
+
+ @mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin horizontal-list {
+  @include reset-list;
+
+  li {
+    display: inline-block;
+    margin: {
+      left: -2px;
+      right: 2em;
+    }
+  }
+}
+
+nav ul {
+  @include horizontal-list;
+}

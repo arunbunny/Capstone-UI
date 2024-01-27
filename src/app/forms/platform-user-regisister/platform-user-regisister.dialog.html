@@ -75,7 +75,17 @@
                    
                     <div class="flex -mx-3">
                         <div class="w-full px-3 mb-5">
-                            <button class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"(click)="onSubmit()">REGISTER</button>
+                            <button
+                            [disabled]="registerForm.invalid"
+                            [ngClass]="{
+                              'bg-gray-400 cursor-not-allowed': registerForm.invalid,
+                              'bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700': registerForm.valid
+                            }"
+                            class="block w-full max-w-xs mx-auto text-white rounded-lg px-3 py-3 font-semibold"
+                            (click)="onSubmit()"
+                          >
+                            REGISTER
+                          </button>                        
                         </div>
                     </div>
                 </div>
