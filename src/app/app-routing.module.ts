@@ -9,6 +9,8 @@ import { SellerDashboardComponent } from './pages/seller-dashboard/seller-dashbo
 import { BuyerDashboardComponent } from './pages/buyer-dashboard/buyer-dashboard.component';
 import { RegisterLandAssetDialog } from './forms/register-land-asset/register-land-asset.dialog';
 import { GetBuyerReqsComponent } from './components/get-buyer-reqs/get-buyer-reqs.component';
+import { ViewSellerLandsComponent } from './components/view-seller-lands/view-seller-lands.component';
+import { TransferFormComponent } from './forms/transfer-form/transfer-form.component';
 
 const routes: Routes = [
   {  
@@ -53,6 +55,14 @@ const routes: Routes = [
   {
     path:'get-buyer-requests',
     component:GetBuyerReqsComponent
+  },
+  {
+    path:'view-seller-lands',
+    component:ViewSellerLandsComponent
+  },
+  {
+    path:'transfer-land',
+    component:TransferFormComponent
   }
   // Add other routes as needed
 ];

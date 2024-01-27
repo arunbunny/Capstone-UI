@@ -24,8 +24,20 @@ export class PlatformService {
     return this.http.post(`${this.apiUrl}/register-land`, body)
   }
 
-  getBuyerRequests(){
-    return this.http.get(`${this.apiUrl}/get-my-request`)
+  getBuyerRequests(id:any){
+    return this.http.get(`${this.apiUrl}/get-my-request?ownerid=`+id)
+  }
+
+  updateRequest(req:any){
+    return this.http.post(`${this.apiUrl}/approve-land-request`, req)
+  }
+
+  raiseLandRequest(req:any){
+    return this.http.post(`${this.apiUrl}/raise-land-request`, req)
+  }
+
+  getLands(){
+    return this.http.get(`${this.apiUrl}/get-all-lands`)
   }
 
 

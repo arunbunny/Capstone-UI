@@ -12,9 +12,11 @@ export class GetBuyerReqsComponent implements OnInit{
   ngOnInit(): void {
     this.fetchBuyerRequests();
   }
-
+  id:any
   fetchBuyerRequests() {
-    this.platService.getBuyerRequests().subscribe(
+    this.id = localStorage['aadhar'];
+    this.id =this.id.replace(/"/g, '');
+    this.platService.getBuyerRequests(this.id).subscribe(
       (data:any) => {
         console.log(data);
         this.buyerRequests = data;

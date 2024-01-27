@@ -22,6 +22,8 @@ import { RegisterLandAssetDialog } from './forms/register-land-asset/register-la
 import { CommonModule } from '@angular/common';
 
 import {GetBuyerReqsComponent} from './components/get-buyer-reqs/get-buyer-reqs.component';
+import { ViewSellerLandsComponent } from './components/view-seller-lands/view-seller-lands.component';
+import { FailureAlertComponent } from './forms/failure-alert/failure-alert.component';
 
 
 
@@ -39,7 +41,9 @@ import {GetBuyerReqsComponent} from './components/get-buyer-reqs/get-buyer-reqs.
     BuyerDashboardComponent,
     SuccessAlertDialog,
     RegisterLandAssetDialog,
-    GetBuyerReqsComponent
+    GetBuyerReqsComponent,
+    ViewSellerLandsComponent,
+    FailureAlertComponent
   ],
   imports: [
     BrowserModule,

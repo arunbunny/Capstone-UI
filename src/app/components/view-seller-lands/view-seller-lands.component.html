@@ -1,0 +1,49 @@
+
+<div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 min-h-screen flex flex-col">
+<div class="flex flex-wrap justify-center items-center">
+
+  <!-- Use *ngFor to iterate through the array of responses -->
+  <div *ngFor="let response of myRequests" class="bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 transform hover:scale-105 shadow-lg rounded-lg m-4 max-w-md w-full transition-transform duration-300 ease-in-out">
+    <div class="p-6">
+      <div class="font-bold text-3xl text-white mb-4 bg-indigo-600 p-4 rounded-md">Land Information</div>
+
+      <!-- Card Content -->
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Left Side -->
+        <div>
+          <label class="text-gray-800 mb-2 font-bold">Land ID:</label>
+          <p class="text-gray-600 mb-2">{{ response.landid }}</p>
+
+          <label class="text-gray-800 mb-2 font-bold">Owner ID:</label>
+          <p class="text-gray-600 mb-2">{{ response.ownerid }}</p>
+
+          <label class="text-gray-800 mb-2 font-bold">Area:</label>
+          <p class="text-gray-600 mb-2">{{ response.area }}</p>
+
+          <label class="text-gray-800 mb-2 font-bold">Price:</label>
+          <p class="text-gray-600 mb-2">{{ response.price }}</p>
+
+          <label class="text-gray-800 mb-2 font-bold">Location:</label>
+          <p class="text-gray-600 mb-2">{{ response.location }}</p>
+
+          <label class="text-gray-800 mb-2 font-bold">Address:</label>
+          <p class="text-gray-600 mb-2">{{ response.address }}</p>
+        </div>
+
+        <!-- Right Side -->
+        <div>
+          <label class="text-gray-800 mb-2 font-bold">Registrar Status:</label>
+          <p [class]="response.registrar_Status === 'Pending' ? 'text-yellow-500 font-bold' : 'text-green-500 font-bold'">{{ response.registrar_Status }}</p>
+
+          <label class="text-gray-800 mb-2 font-bold">Revenue Status:</label>
+          <p [class]="response.revenue_Status === 'Pending' ? 'text-yellow-500 font-bold' : 'text-green-500 font-bold'">{{ response.revenue_Status }}</p>
+
+          <!-- You can add conditional styling for Pending status -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>

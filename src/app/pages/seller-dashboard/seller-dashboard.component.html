@@ -11,12 +11,16 @@
 
               <div class="flex flex-row space-x-2 block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                   <i class="fa fa-exchange" aria-hidden="true"></i>
-                  <p >Transfer Land</p>
+                  <p routerLink="/transfer-land">Transfer Land</p>
               </div>
               <div class="flex flex-row space-x-2 block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                   <img src="/assets/registered-document.png" class="h-8 text-white" aria-hidden="true">
                   <p routerLink="/register-land-asset">Register Land Asset</p>
-              </div>             
+              </div> 
+              <div class="flex flex-row space-x-2 block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+                <p routerLink="/view-seller-lands">View My Land Assets</p>
+            </div>             
           </div>
   
          
@@ -41,28 +45,50 @@
     <!-- get-buyer-requests.component.html -->
 
 <div class="container mx-auto mt-8">
-    <h2 class="text-2xl font-bold mb-4">Buyer Requests</h2>
-  
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <!-- Buyer Request Card -->
-      <div *ngFor="let request of buyerRequests" class="bg-white rounded overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105 border-solid border-2 border-yellow-400">
-        <!-- Card Content -->
-        <div class="p-4">
-          <h3 class="font-bold text-xl mb-2">{{ request.buyerName }}</h3>
-          <p class="text-gray-700">{{ request.details }}</p>
-          <!-- Additional details as needed -->
-  
-          <!-- Approve and Reject Buttons -->
-          <div class="flex justify-between mt-4">
-            <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">Approve</button>
-            <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Reject</button>
+  <h2 class="text-2xl font-bold mb-4">Buyer Requests</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <!-- Buyer Request Card -->
+    <div *ngFor="let request of buyerRequests" class="bg-white rounded overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105 border-solid border-2 border-yellow-400">
+      <!-- Card Content -->
+      <div class="p-4">
+        <h3 class="font-bold text-xl mb-2">{{ request.requestId }}</h3>
+        <div class="flex justify-between">
+          <div class="text-left">
+            <p class="text-gray-700">
+              <span class="font-bold">Land ID:</span><br>
+              <span class="font-bold">Buyer ID:</span><br>
+              <span class="font-bold">Owner ID:</span><br>
+              <span class="font-bold">Require Loan:</span><br>
+              <span class="font-bold">Status:</span>
+            </p>
+          </div>
+          <div class="text-right">
+            <p class="text-gray-700">
+              {{ request.landid }}<br>
+              {{ request.buyerid }}<br>
+              {{ request.ownerid }}<br>
+              <span [ngClass]="{'text-green-500': request.requireloan === 'yes', 'text-red-500': request.requireloan === 'no'}">
+                {{ request.requireloan === 'yes' ? '✔' : '✘' }}
+              </span><br>
+              {{ request.status }}
+            </p>
           </div>
         </div>
-      </div>
   
-      <!-- Repeat the card structure for each buyer request -->
+        <!-- Approve and Reject Buttons -->
+        <div class="flex justify-between mt-4">
+          <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"(click)="ApproveReq(request)">Approve</button>
+          <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"(click)="RejectReq(request)">Reject</button>
+        </div>
+      </div>
     </div>
+  
+    <!-- Repeat the card structure for each buyer request -->
   </div>
+  
+</div>
+
   
    
   </div>

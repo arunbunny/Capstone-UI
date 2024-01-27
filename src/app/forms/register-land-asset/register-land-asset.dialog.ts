@@ -17,7 +17,6 @@ export class RegisterLandAssetDialog {
     this.registerForm.patchValue({ownerid:this.loadedData})
   }
   registerForm = this.fb.group({
-    landid :['',[Validators.required]],
     ownerid:[this.loadedData,[Validators.required]],
     area:['',[Validators.required]],
     price:['',[Validators.required]],
